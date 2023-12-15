@@ -36,7 +36,8 @@ public class LList<T> {
     }
 
     public T get(int index) {
-        if(index >= size) throw new IndexOutOfBoundsException();
+
+        if(index >= size || index < 0) throw new IndexOutOfBoundsException();
         Node<T> current = head.getNext();
         for (int i = 0; i < index; i++) {
             current = current.getNext();
